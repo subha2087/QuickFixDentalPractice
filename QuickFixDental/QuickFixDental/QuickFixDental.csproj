@@ -80,6 +80,7 @@
     <Compile Include="Model\TreatmentPlan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnityConfig.cs" />
     <Compile Include="View\Interface\IMedicalHistView.cs" />
     <Compile Include="View\Interface\IPatientListView.cs" />
     <Compile Include="View\Interface\IPatientRegView.cs" />
