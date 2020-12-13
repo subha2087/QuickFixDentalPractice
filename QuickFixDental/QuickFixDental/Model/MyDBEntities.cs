@@ -16,7 +16,7 @@ namespace QuickFixDental.Model
             //  Database.SetInitializer(new MigrateDatabaseToLatestVersion<MyDBEntities);
         }
 
-        public DbSet<Patient> Patients { get; set; }
+        public virtual DbSet<Patient> Patients { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<TreatmentPlan> TreatmentPlans { get; set; }
