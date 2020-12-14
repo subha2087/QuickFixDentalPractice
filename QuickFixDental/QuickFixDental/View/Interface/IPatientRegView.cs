@@ -15,7 +15,8 @@ namespace QuickFixDental.View
         string Address { get; set; }
         string Email { get; set; }
         string GPName { get; set; }
-        string GPAddress { get; set; }        
+        string GPAddress { get; set; }            
+        object MedicalHistory { get; set; }
 
         event EventHandler Submit;
         void ShowScreen();

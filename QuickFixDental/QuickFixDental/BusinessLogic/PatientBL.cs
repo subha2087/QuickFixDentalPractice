@@ -58,18 +58,20 @@ namespace QuickFixDental.BusinessLogic
 
         public Appointment GetAppointment(int patientId)
         {
-            throw new NotImplementedException();
+            return context.Appointments.FirstOrDefault(m => m.Patient_ID == patientId);
         }
 
         public MedicalHistory GetMedicalHistory(int patientid)
         {
-            throw new NotImplementedException();
+           var histories= context.MedicalHistorys.FirstOrDefault(m => m.Patient_ID == patientid);
+           return histories;
         }
 
         public Patient GetPatient(int patientId)
         {
             var patient= context.Patients.Where(p => p.Patient_ID == patientId).FirstOrDefault();
-            patient.MedicalHistory = context.MedicalHistorys.FirstOrDefault(m => m.Patient_ID == patientId);
+            patient.MedicalHistory = GetMedicalHistory(patientId);
+            patient.MedicalHistory.Patient_ID = (Int16)patientId;
             return patient;
         }
 
@@ -80,24 +82,39 @@ namespace QuickFixDental.BusinessLogic
 
         public TreatmentPlan GetTreatmentPlan(int patientId)
         {
-            throw new NotImplementedException();
+            return context.TreatmentPlans.FirstOrDefault(m => m.Patient_ID == patientId);
         }
 
         public bool UpdateMedicalHistory(MedicalHistory history)
         {
-            throw new NotImplementedException();
+            var updHist = context.MedicalHistorys.FirstOrDefault(s => s.MedHistory_ID == history.MedHistory_ID);
+            updHist.AllergicTo = history.AllergicTo;
+            updHist.LastUpdateBy = history.LastUpdateBy;
+            updHist.LastUpdateDate = history.LastUpdateDate;
+            return context.SaveChanges() > 0 ? true : false;
         }
 
         public bool UpdatePatient(Patient patient)
         {
-            context.Patients.Remove(patient);
-            context.Patients.Add(patient);
+            var updPatient = context.Patients.FirstOrDefault(s => s.Patient_ID == patient.Patient_ID);
+            updPatient.GPName = patient.GPName;
+            updPatient.GPAddress = patient.GPAddress;
+            updPatient.Name = patient.Name;
+            updPatient.PhoneNo = patient.PhoneNo;
+            updPatient.Email = patient.Email;
+            updPatient.Address = patient.Address;
+            updPatient.MedicalHistory = patient.MedicalHistory;
             return context.SaveChanges() > 0 ? true : false;
         }
 
         public bool UpdateTreatmentPlan(TreatmentPlan plan)
         {
-            throw new NotImplementedException();
+            var updPlan = context.TreatmentPlans.FirstOrDefault(s => s.Plan_ID == plan.Plan_ID);
+            updPlan.Dentist_ID = plan.Dentist_ID;
+            updPlan.CreatedOn = plan.CreatedOn;
+            updPlan.Note = plan.Note;
+            updPlan.FeeBand = plan.FeeBand;
+            return context.SaveChanges() > 0 ? true : false;
         }
     }
 }

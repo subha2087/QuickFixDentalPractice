@@ -32,15 +32,22 @@ namespace QuickFixDental.Presenter
             _patientView.GPAddress = patient.GPAddress;
             _patientView.Email = patient.Email;
             _patientView.PhoneNo = patient.PhoneNo;
-
+            _patientView.MedicalHistory = patient.MedicalHistory;
         }
         private void _patientView_Submit(object sender, EventArgs e)
         {
             if (_patientView.Patient_ID > 0)
             {
-                var patient = _patientBL.GetPatient(_patientView.Patient_ID);
+                var patient = new Model.Patient();
+                patient.Patient_ID = _patientView.Patient_ID;
                 patient.Name = _patientView.PatientName;
                 patient.Address = _patientView.Address;
+                patient.PhoneNo= _patientView.PhoneNo;
+                patient.Email = _patientView.Email;
+                patient.DOB = _patientView.DOB;
+                patient.GPName = _patientView.GPName;
+                patient.GPAddress = _patientView.GPAddress;
+                patient.MedicalHistory = _patientView.MedicalHistory as Model.MedicalHistory;
                 _patientBL.UpdatePatient(patient);
             }
             else
