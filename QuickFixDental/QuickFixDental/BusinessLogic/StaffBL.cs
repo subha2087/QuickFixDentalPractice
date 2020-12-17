@@ -17,7 +17,8 @@ namespace QuickFixDental.BusinessLogic
 
         public bool AddStaff(Staff staff)
         {
-            throw new NotImplementedException();
+            context.Staffs.Add(staff);
+            return context.SaveChanges() > 0 ? true : false;
         }
 
         public void Dispose()
@@ -27,17 +28,22 @@ namespace QuickFixDental.BusinessLogic
 
         public Staff GetStaff(int staffId)
         {
-            throw new NotImplementedException();
+            return context.Staffs.FirstOrDefault(p => p.Staff_ID == staffId);
         }
 
         public List<Staff> GetStaffs()
         {
-            throw new NotImplementedException();
+            return context.Staffs.ToList();
         }
 
         public bool UpdateStaff(Staff staff)
         {
-            throw new NotImplementedException();
+            var updStaff = context.Staffs.FirstOrDefault(s => s.Staff_ID == staff.Staff_ID);
+            updStaff.Name = staff.Name;
+            updStaff.PhoneNo = staff.PhoneNo;
+            updStaff.ShiftDays = staff.ShiftDays;
+            updStaff.ShiftHours = staff.ShiftHours;
+            return context.SaveChanges() > 0 ? true : false;
         }
     }
 }
