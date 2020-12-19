@@ -62,11 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\ILogonBL.cs" />
     <Compile Include="BusinessLogic\IPatientBL.cs" />
     <Compile Include="BusinessLogic\IStaffBL.cs" />
+    <Compile Include="BusinessLogic\LogonBL.cs" />
     <Compile Include="BusinessLogic\PatientBL.cs" />
     <Compile Include="BusinessLogic\StaffBL.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Presenter\LogonPresenter.cs" />
     <Compile Include="Presenter\MedicalHistPresenter.cs" />
     <Compile Include="Presenter\PatientListPresenter.cs" />
     <Compile Include="Presenter\PatientRegPresenter.cs" />
@@ -81,11 +84,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnityConfig.cs" />
+    <Compile Include="View\Interface\ILogonView.cs" />
     <Compile Include="View\Interface\IMedicalHistView.cs" />
     <Compile Include="View\Interface\IPatientListView.cs" />
     <Compile Include="View\Interface\IPatientRegView.cs" />
     <Compile Include="View\Interface\IStaffRegView.cs" />
     <Compile Include="View\Interface\ITreatmentPlanView.cs" />
+    <Compile Include="View\LogonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LogonView.Designer.cs">
+      <DependentUpon>LogonView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientListView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\LogonView.resx">
+      <DependentUpon>LogonView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\PatientListView.resx">
       <DependentUpon>PatientListView.cs</DependentUpon>
     </EmbeddedResource>

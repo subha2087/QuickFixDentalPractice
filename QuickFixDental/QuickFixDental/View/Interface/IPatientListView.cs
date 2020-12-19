@@ -13,5 +13,6 @@ namespace QuickFixDental.View
         List<Patient> Patients { get; set; }
         event DataGridViewCellEventHandler PatientClick;
         event EventHandler PatientAdd;
+        void ShowScreen();
     }
 }

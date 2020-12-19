@@ -32,6 +32,11 @@ namespace QuickFixDental
         public static void RegisterTypes(IUnityContainer container)
         {
             container
+             .RegisterType<ILogonBL>()
+             .RegisterType<ILogonView>()
+             .RegisterType<LogonPresenter>(new PerResolveLifetimeManager());
+
+            container
                .RegisterType<IPatientBL>()
                .RegisterType<IStaffBL>()
                .RegisterType<MyDBEntities>(new PerResolveLifetimeManager());

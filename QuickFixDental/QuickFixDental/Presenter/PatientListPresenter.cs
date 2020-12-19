@@ -38,6 +38,10 @@ namespace QuickFixDental.Presenter
             var patientRegPresenter = new PatientRegPresenter(_patientBL, patientRegView,id);
             patientRegPresenter.ShowScreen();
         }
+        public void ShowScreen()
+        {
+            _patientListView.ShowScreen();
+        }
 
     }
 }

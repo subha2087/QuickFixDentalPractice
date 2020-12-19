@@ -36,5 +36,9 @@ namespace QuickFixDental.View
             remove { dataGridView1.CellDoubleClick -= value; }
         }
 
+        public void ShowScreen()
+        {
+            this.Show();
+        }
     }
 }

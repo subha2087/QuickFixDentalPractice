@@ -23,10 +23,10 @@ namespace QuickFixDental
             Application.SetCompatibleTextRenderingDefault(false);
             var container = UnityConfig.GetUnityContainer();
             var dbcontext = container.Resolve<MyDBEntities>();
-            var patientBL = new PatientBL(dbcontext);
-            var patientListView = container.Resolve<PatientListView>();
-            patientListView.Tag = new PatientListPresenter(patientBL, patientListView);
-            Application.Run(patientListView);
+            var logonBL = new LogonBL(dbcontext);
+            var logonView = container.Resolve<LogonView>();
+            logonView.Tag = new LogonPresenter(logonBL, logonView);
+            Application.Run(logonView);
         }
 
 
