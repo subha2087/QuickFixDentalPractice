@@ -19,6 +19,8 @@ namespace QuickFixDental.View
         object MedicalHistory { get; set; }
 
         event EventHandler Submit;
+
+        event EventHandler Next;
         void ShowScreen();
     }
 }

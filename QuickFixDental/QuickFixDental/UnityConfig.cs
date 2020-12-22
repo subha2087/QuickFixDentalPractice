@@ -43,21 +43,21 @@ namespace QuickFixDental
 
             container
                  .RegisterType<IPatientBL>()
-                 .RegisterType<IPatientListView>()
+                 .RegisterType<IPatientListView,PatientListView>()
                  .RegisterType<PatientListPresenter>(new PerResolveLifetimeManager());
             container
                  .RegisterType<IPatientBL>()
-                 .RegisterType<IPatientRegView>()
+                 .RegisterType<IPatientRegView,PatientRegView>()
                  .RegisterType<PatientRegPresenter>(new PerResolveLifetimeManager());
 
             container
                .RegisterType<IPatientBL>()
-               .RegisterType<IMedicalHistView>()
+               .RegisterType<IMedicalHistView,MedicalHistView>()
                .RegisterType<MedicalHistPresenter>(new PerResolveLifetimeManager());
 
             container
               .RegisterType<IPatientBL>()
-              .RegisterType<ITreatmentPlanView>()
+              .RegisterType<ITreatmentPlanView,TreatmentPlanView>()
               .RegisterType<TreatmentPlanPresenter>(new PerResolveLifetimeManager());
 
         }

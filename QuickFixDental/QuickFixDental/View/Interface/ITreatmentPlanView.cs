@@ -8,5 +8,6 @@ namespace QuickFixDental.View
 {
     public interface ITreatmentPlanView
     {
+        void ShowScreen();
     }
 }

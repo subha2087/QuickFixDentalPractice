@@ -1,5 +1,6 @@
 ﻿using QuickFixDental.BusinessLogic;
 using QuickFixDental.View;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,23 @@ namespace QuickFixDental.Presenter
     {
         private readonly IPatientRegView _patientView;
         private readonly IPatientBL _patientBL;
+        private Int16 _PatientID { get; set; }
         public PatientRegPresenter(IPatientBL patientBL, IPatientRegView patientView,Int16 PatientId)
         {
             _patientView = patientView;
             _patientBL = patientBL;
             _patientView.Submit += _patientView_Submit;
-            if(PatientId>0)
+            _patientView.Next += _patientView_Next;
+            _PatientID = PatientId;
+            if (PatientId>0)
             FillPatientDetails(PatientId);
+        }
+
+        private void _patientView_Next(object sender, EventArgs e)
+        {
+            var medicalHistView = UnityConfig.GetUnityContainer().Resolve<IMedicalHistView>();
+            MedicalHistPresenter medicalHistPresenter = new MedicalHistPresenter(_patientBL, medicalHistView, _PatientID);
+            medicalHistPresenter.ShowScreen();
         }
 
         private void FillPatientDetails(Int16 id)

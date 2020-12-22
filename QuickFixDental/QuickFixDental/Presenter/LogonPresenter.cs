@@ -28,7 +28,7 @@ namespace QuickFixDental.Presenter
                 var container = UnityConfig.GetUnityContainer();
                 var dbcontext = container.Resolve<MyDBEntities>();
                 var patientBL = new PatientBL(dbcontext);
-                var patientListView = container.Resolve<PatientListView>();
+                var patientListView = container.Resolve<IPatientListView>();
                 PatientListPresenter patientListPresenter = new PatientListPresenter(patientBL, patientListView);
                 patientListPresenter.ShowScreen();
                 _logonView.CloseScreen();

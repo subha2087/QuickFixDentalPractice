@@ -25,7 +25,7 @@ namespace QuickFixDental.Presenter
 
         private void _patientListView_PatientAdd(object sender, EventArgs e)
         {
-            var patientRegView = UnityConfig.GetUnityContainer().Resolve<PatientRegView>();
+            var patientRegView = UnityConfig.GetUnityContainer().Resolve<IPatientRegView>();
             var patientRegPresenter = new PatientRegPresenter(_patientBL, patientRegView, 0);
             patientRegPresenter.ShowScreen();
         }
@@ -34,7 +34,7 @@ namespace QuickFixDental.Presenter
         {
             int index= ((System.Windows.Forms.DataGridViewCellEventArgs)e).RowIndex;
             Int16 id = (Int16)((System.Windows.Forms.DataGridView)sender).Rows[index].Cells[0].Value;
-            var patientRegView = UnityConfig.GetUnityContainer().Resolve<PatientRegView>();
+            var patientRegView = UnityConfig.GetUnityContainer().Resolve<IPatientRegView>();
             var patientRegPresenter = new PatientRegPresenter(_patientBL, patientRegView,id);
             patientRegPresenter.ShowScreen();
         }
