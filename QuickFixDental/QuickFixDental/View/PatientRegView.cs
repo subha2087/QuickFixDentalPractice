@@ -16,7 +16,8 @@ namespace QuickFixDental.View
         {
             InitializeComponent();
         }
-        private object medicalHistory;
+        private object medicalHistory;      
+
         public short Patient_ID { get; set; }
         public string PatientName { get=>txtName.Text; set=>txtName.Text=value; }
         public DateTime DOB { get => Convert.ToDateTime(txtDOB.Text); set => txtDOB.Text = value.ToString(); }
@@ -38,6 +39,10 @@ namespace QuickFixDental.View
         {
             this.Show();
         }
-
+        public event EventHandler Next
+        {
+            add { button2.Click += value; }
+            remove { button2.Click -= value; }
+        }
     }
 }
