@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.View
 {
+    /// <summary>
+    /// Interface for Medical History View
+    /// Ayisha
+    /// </summary>
     public interface IMedicalHistView
     {
         Int16 PatientID { get; set; }

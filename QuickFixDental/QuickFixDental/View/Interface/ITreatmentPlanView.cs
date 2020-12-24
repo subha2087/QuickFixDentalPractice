@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.View
 {
+    /// <summary>
+    /// Interface for Treatment Plan view
+    /// Ayisha
+    /// </summary>
     public interface ITreatmentPlanView
     {
         void ShowScreen();

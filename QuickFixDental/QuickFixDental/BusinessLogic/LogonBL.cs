@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.BusinessLogic
 {
+    /// <summary>
+    /// Business Logic for Logon
+    /// Subhalakshmi
+    /// </summary>
     public class LogonBL : ILogonBL
     {
         private readonly MyDBEntities _context;

@@ -9,7 +9,7 @@ namespace QuickFixDental.BusinessLogic
 {
     /// <summary>
     /// Contains the business logic for staff
-    /// by Subhalakshmi
+    /// by Ayisha
     /// </summary>
     public class StaffBL :IStaffBL,IDisposable
     {

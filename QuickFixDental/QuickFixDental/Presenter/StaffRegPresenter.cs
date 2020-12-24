@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.Presenter
 {
-    class StaffRegPresenter
+    /// <summary>
+    /// 
+    /// </summary>
+    public class StaffRegPresenter
     {
     }
 }

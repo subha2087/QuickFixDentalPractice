@@ -10,6 +10,10 @@ using Microsoft.Practices.Unity;
 
 namespace QuickFixDental.Presenter
 {
+    /// <summary>
+    /// Presenter for Logon
+    /// Subhalakshmi
+    /// </summary>
     public class LogonPresenter 
     {
         private readonly ILogonView _logonView;

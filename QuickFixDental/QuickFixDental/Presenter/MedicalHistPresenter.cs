@@ -10,6 +10,10 @@ using QuickFixDental.Model;
 
 namespace QuickFixDental.Presenter
 {
+    /// <summary>
+    /// Presenter for MedicalHistory
+    /// Ayisha
+    /// </summary>
     public class MedicalHistPresenter
     {
         private readonly IMedicalHistView _medicalHistView;

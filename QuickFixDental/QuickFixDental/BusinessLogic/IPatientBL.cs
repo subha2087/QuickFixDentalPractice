@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.BusinessLogic
 {
+    /// <summary>
+    /// Interface for Patient Business logic
+    /// Subhalakshmi
+    /// </summary>
     public interface IPatientBL
     {
         List<Patient> GetPatients();

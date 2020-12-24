@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.BusinessLogic
 {
+    /// <summary>
+    /// Interface for Staff Business logic
+    /// Ayisha
+    /// </summary>
     public interface IStaffBL
     {
         List<Staff> GetStaffs();

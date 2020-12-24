@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.View
 {
+    /// <summary>
+    /// Interface for logon view
+    /// Subhalakshmi
+    /// </summary>
     public interface ILogonView
     {
         string UserName { get; set; }

@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.Presenter
 {
+    /// <summary>
+    /// Presenter for Patient List
+    /// Subhalakshmi
+    /// </summary>
     public class PatientListPresenter
     {
         private readonly IPatientListView _patientListView;

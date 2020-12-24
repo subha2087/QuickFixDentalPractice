@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuickFixDental.View
-{
+{/// <summary>
+ /// Interface for Patient List view
+ /// Subhalakshmi
+ /// </summary>
     public interface IPatientListView
     {
         List<Patient> Patients { get; set; }

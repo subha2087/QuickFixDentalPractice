@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.View
 {
+    /// <summary>
+    /// Interface for Patient Registration view
+    /// Subhalakshmi
+    /// </summary>
     public interface IPatientRegView
     {
         Int16 Patient_ID { get; set; }        

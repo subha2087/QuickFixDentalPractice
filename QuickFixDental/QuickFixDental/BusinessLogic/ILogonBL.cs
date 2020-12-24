@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.BusinessLogic
 {
+    /// <summary>
+    /// Interface for Login Business Logic
+    /// By Subhalakshmi 
+    /// </summary>
     public interface ILogonBL
     {
         bool Register(object obj);
