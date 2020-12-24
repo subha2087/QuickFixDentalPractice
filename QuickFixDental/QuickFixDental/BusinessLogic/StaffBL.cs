@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace QuickFixDental.BusinessLogic
 {
+    /// <summary>
+    /// Contains the business logic for staff
+    /// by Subhalakshmi
+    /// </summary>
     public class StaffBL :IStaffBL,IDisposable
     {
         private readonly MyDBEntities context;
