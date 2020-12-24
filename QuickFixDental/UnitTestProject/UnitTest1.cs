@@ -33,7 +33,7 @@ namespace UnitTestProject
             Patient.Email = "asaasf.sds.com";
             Patient.GPName = "xyx";
             Patient.GPAddress = "dsfdsf";
-            var ret=patientBL.AddPatient(Patient);
+            var ret = patientBL.AddPatient(Patient);
             mockSet.Verify(m => m.Add(It.IsAny<Patient>()), Times.Once());
             mockContext.Verify(m => m.SaveChanges(), Times.Once());
         }
@@ -65,5 +65,41 @@ namespace UnitTestProject
             Assert.AreEqual("BBB", patients[1].Name);
             Assert.AreEqual("ZZZ", patients[2].Name);
         }
+
+
+        [TestMethod]
+        public void GetMedicalHistory()
+        {
+            var data = new List<Patient>
+            {
+                new Patient { Name = "AAA",Patient_ID=1 },
+                new Patient { Name = "BBB",Patient_ID=2 },
+                new Patient { Name = "ZZZ" ,Patient_ID=3},
+            }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<Patient>>();
+            mockSet.As<IQueryable<Patient>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<Patient>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<Patient>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<Patient>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
+            data.ToList().ForEach(l =>
+            {
+                l.MedicalHistory = new MedicalHistory
+                {
+                    AllergicTo = "gel",
+                    Patient_ID = l.Patient_ID,
+                    MedHistory_ID = l.Patient_ID,
+                    LastUpdateBy = "Staff1",
+                    LastUpdateDate = DateTime.Now.Date
+                };
+            });
+            var mockContext = new Mock<MyDBEntities>();
+            mockContext.Setup(c => c.Patients).Returns(mockSet.Object);
+
+            var service = new PatientBL(mockContext.Object);
+            var medicalHistory = service.GetPatients().Where(m=>m.MedicalHistory.Patient_ID==1).FirstOrDefault();          
+            Assert.AreEqual(1, medicalHistory.Patient_ID);
+        }
+
     }
 }
