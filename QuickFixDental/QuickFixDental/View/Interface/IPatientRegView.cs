@@ -26,5 +26,7 @@ namespace QuickFixDental.View
 
         event EventHandler Next;
         void ShowScreen();
+
+        void ShowMessage(string msg);
     }
 }

@@ -19,6 +19,7 @@ namespace QuickFixDental.View
         DateTime LastUpdated { get; set; }
         string LastUpdatedBy { get; set; }
         void ShowScreen();
+        void ShowMessage(string msg);
         event EventHandler Submit;
 
         event EventHandler Next;

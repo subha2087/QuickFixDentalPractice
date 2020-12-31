@@ -39,10 +39,17 @@ namespace QuickFixDental.View
         {
             this.Show();
         }
+
+        public void ShowMessage(string msg)
+        {
+            MessageBox.Show(msg);
+        }
+
         public event EventHandler Next
         {
             add { button2.Click += value; }
             remove { button2.Click -= value; }
         }
+
     }
 }

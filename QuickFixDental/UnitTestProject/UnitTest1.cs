@@ -66,7 +66,6 @@ namespace UnitTestProject
             Assert.AreEqual("ZZZ", patients[2].Name);
         }
 
-
         [TestMethod]
         public void GetMedicalHistory()
         {
@@ -101,5 +100,30 @@ namespace UnitTestProject
             Assert.AreEqual(1, medicalHistory.Patient_ID);
         }
 
+        [TestMethod]
+        public void AddMedicalHistTest()
+        {
+            var mockSet = new Mock<DbSet<Patient>>();
+            var mockContext = new Mock<MyDBEntities>();
+            mockContext.Setup(m => m.Patients).Returns(mockSet.Object);
+            patientBL = new PatientBL(mockContext.Object);
+            var Patient = new Patient();
+            Patient.Name = "Test Patient";
+            Patient.Address = "Test Address";
+            Patient.DOB = DateTime.Now;
+            Patient.Email = "asaasf.sds.com";
+            Patient.GPName = "xyx";
+            Patient.GPAddress = "dsfdsf";
+            var ret = patientBL.AddPatient(Patient);
+            mockSet.Verify(m => m.Add(It.IsAny<Patient>()), Times.Once());
+            mockContext.Verify(m => m.SaveChanges(), Times.Once());
+            MedicalHistory medicalHistory = new MedicalHistory();
+            medicalHistory.Patient_ID = Patient.Patient_ID;
+            medicalHistory.LastUpdateBy = "Staff2";
+            medicalHistory.LastUpdateDate = DateTime.Now;
+            Patient.MedicalHistory = medicalHistory;
+            mockContext.Verify(m => m.SaveChanges(), Times.Once());
+
+        }
     }
 }

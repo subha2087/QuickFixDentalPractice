@@ -63,7 +63,10 @@ namespace QuickFixDental.Presenter
                 patient.GPName = _patientView.GPName;
                 patient.GPAddress = _patientView.GPAddress;
                 patient.MedicalHistory = _patientView.MedicalHistory as Model.MedicalHistory;
-                _patientBL.UpdatePatient(patient);
+                if(_patientBL.UpdatePatient(patient))
+                {
+                    _patientView.ShowMessage("Update Successfully");
+                }
             }
             else
             {
@@ -79,7 +82,10 @@ namespace QuickFixDental.Presenter
                 patient.MedicalHistory.AllergicTo = "Nil";
                 patient.MedicalHistory.LastUpdateBy = patient.Name;
                 patient.MedicalHistory.LastUpdateDate = DateTime.Now;
-                _patientBL.AddPatient(patient);
+                if(_patientBL.AddPatient(patient))
+                {
+                    _patientView.ShowMessage("Added Successfully");
+                }
             }
         }
 

@@ -29,6 +29,11 @@ namespace QuickFixDental.View
             this.Show();
         }
 
+        public void ShowMessage(string msg)
+        {
+            MessageBox.Show(msg);
+        }
+
         public event EventHandler Submit
         {
             add { btnSubmit.Click += value; }

@@ -44,7 +44,10 @@ namespace QuickFixDental.Presenter
             medicalHistory.AllergicTo = _medicalHistView.AlergicTo;
             medicalHistory.LastUpdateDate = _medicalHistView.LastUpdated;
             medicalHistory.LastUpdateBy = _medicalHistView.LastUpdatedBy;
-            _patientBL.UpdateMedicalHistory(medicalHistory);
+            if(_patientBL.UpdateMedicalHistory(medicalHistory))
+            {
+                _medicalHistView.ShowMessage("Update Success");
+            }
         }
 
         private void FillDetails(Int16 patientID)
