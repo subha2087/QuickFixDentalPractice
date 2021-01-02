@@ -25,8 +25,17 @@ namespace QuickFixDental.Presenter
             _medicalHistView = medicalHistView;
             _medicalHistView.Submit += _medicalHistView_Submit;
             _medicalHistView.Next += _medicalHistView_Next;
+            _medicalHistView.Book += _medicalHistView_Book;
             _patientID = patientID;
             FillDetails(patientID);
+        }
+
+        private void _medicalHistView_Book(object sender, EventArgs e)
+        {
+            var appointmentView = UnityConfig.GetUnityContainer().Resolve<IAppointmentView>();
+            var _staffBL= UnityConfig.GetUnityContainer().Resolve<IStaffBL>();
+            AppointmentPresenter appPresenter = new AppointmentPresenter(_patientBL,_staffBL, appointmentView, _patientID);
+            appPresenter.ShowScreen();
         }
 
         private void _medicalHistView_Next(object sender, EventArgs e)

@@ -65,6 +65,11 @@ namespace QuickFixDental.BusinessLogic
             return context.Appointments.FirstOrDefault(m => m.Patient_ID == patientId);
         }
 
+        public List<Appointment> GetAppointments()
+        {
+            return context.Appointments.ToList();
+        }
+
         public MedicalHistory GetMedicalHistory(int patientid)
         {
            var histories= context.MedicalHistorys.FirstOrDefault(m => m.Patient_ID == patientid);

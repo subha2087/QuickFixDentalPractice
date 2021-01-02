@@ -37,6 +37,7 @@ namespace QuickFixDental.View
             this.txtLastUpdatedBy = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.btnBook = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtAlergicTo
@@ -106,11 +107,21 @@ namespace QuickFixDental.View
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
+            // btnBook
+            // 
+            this.btnBook.Location = new System.Drawing.Point(387, 233);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(193, 23);
+            this.btnBook.TabIndex = 8;
+            this.btnBook.Text = "Book Appointment";
+            this.btnBook.UseVisualStyleBackColor = true;
+            // 
             // MedicalHistView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBook);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtLastUpdatedBy);
@@ -136,5 +147,6 @@ namespace QuickFixDental.View
         private System.Windows.Forms.TextBox txtLastUpdatedBy;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnBook;
     }
 }

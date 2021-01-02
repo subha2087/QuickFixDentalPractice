@@ -62,9 +62,9 @@ namespace QuickFixDental.View
             // 
             this.button2.Location = new System.Drawing.Point(545, 404);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 34);
+            this.button2.Size = new System.Drawing.Size(136, 34);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Next";
+            this.button2.Text = "Medical History";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox1

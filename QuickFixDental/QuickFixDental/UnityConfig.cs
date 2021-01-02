@@ -60,6 +60,12 @@ namespace QuickFixDental
               .RegisterType<ITreatmentPlanView,TreatmentPlanView>()
               .RegisterType<TreatmentPlanPresenter>(new PerResolveLifetimeManager());
 
+            container
+             .RegisterType<IPatientBL>()
+             .RegisterType<IStaffBL,StaffBL>()
+             .RegisterType<IAppointmentView, AppointmentView>()
+             .RegisterType<AppointmentPresenter>(new PerResolveLifetimeManager());
+
         }
     }
 }

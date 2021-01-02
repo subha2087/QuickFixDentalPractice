@@ -69,6 +69,7 @@
     <Compile Include="BusinessLogic\PatientBL.cs" />
     <Compile Include="BusinessLogic\StaffBL.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Presenter\AppointmentPresenter.cs" />
     <Compile Include="Presenter\LogonPresenter.cs" />
     <Compile Include="Presenter\MedicalHistPresenter.cs" />
     <Compile Include="Presenter\PatientListPresenter.cs" />
@@ -84,6 +85,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnityConfig.cs" />
+    <Compile Include="View\AppointmentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AppointmentView.Designer.cs">
+      <DependentUpon>AppointmentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Interface\IAppointmentView.cs" />
     <Compile Include="View\Interface\ILogonView.cs" />
     <Compile Include="View\Interface\IMedicalHistView.cs" />
     <Compile Include="View\Interface\IPatientListView.cs" />
@@ -129,6 +137,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AppointmentView.resx">
+      <DependentUpon>AppointmentView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\LogonView.resx">
       <DependentUpon>LogonView.cs</DependentUpon>
     </EmbeddedResource>

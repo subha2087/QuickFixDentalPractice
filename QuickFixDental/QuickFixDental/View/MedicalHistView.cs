@@ -17,7 +17,8 @@ namespace QuickFixDental.View
             InitializeComponent();
         }
         private short patientID;
-        private short medicalID;
+        private short medicalID;        
+
         public string AlergicTo { get => txtAlergicTo.Text; set => txtAlergicTo.Text = value; }
         public DateTime LastUpdated { get => Convert.ToDateTime(txtLastUpdated.Text); set => txtLastUpdated.Text=value.ToString(); }
         public string LastUpdatedBy { get => txtLastUpdatedBy.Text; set => txtLastUpdatedBy.Text=value; }
@@ -43,6 +44,12 @@ namespace QuickFixDental.View
         {
             add { btnNext.Click += value; }
             remove { btnNext.Click -= value; }
+        }
+
+        public event EventHandler Book
+        {
+            add { btnBook.Click += value; }
+            remove { btnBook.Click -= value; }
         }
     }
 }

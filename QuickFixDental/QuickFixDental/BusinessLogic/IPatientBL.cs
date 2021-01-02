@@ -24,6 +24,7 @@ namespace QuickFixDental.BusinessLogic
         bool AddTreatmentPlan(TreatmentPlan plan);
         bool UpdateTreatmentPlan(TreatmentPlan plan);
         Appointment GetAppointment(int patientId);
+        List<Appointment> GetAppointments();
         string BookAppointment(Appointment appointment);
         string ChangeAppointment(Appointment appointment);
         bool DeleteAppointment(int patientId);

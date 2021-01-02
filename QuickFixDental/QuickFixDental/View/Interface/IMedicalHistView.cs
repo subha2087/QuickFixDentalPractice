@@ -20,8 +20,11 @@ namespace QuickFixDental.View
         string LastUpdatedBy { get; set; }
         void ShowScreen();
         void ShowMessage(string msg);
+
         event EventHandler Submit;
 
         event EventHandler Next;
+
+        event EventHandler Book;
     }
 }
